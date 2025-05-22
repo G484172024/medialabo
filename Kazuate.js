@@ -13,28 +13,28 @@ b.addEventListener('click', hantei);
 
 // ボタンを押した後の処理をする関数 hantei() の定義
 function hantei() {
-    // 将来ここでは 4 ではなくテキストボックスに指定された数値を yoso に代入する
+    // 将来ここでは 4 ではなくテキストボックスに指定された数値を yosou に代入する
     let i = document.querySelector('input[name ="kazu"]');
-    let yoso = Number(i.value);
+    let yosou = Number(i.value);
 
     let p = document.querySelector('span#kaisu');
     kaisu++;
     p.textContent = kaisu;
 
     let y = document.querySelector('span#answer');
-    y.textContent = yoso;
+    y.textContent = yosou;
 
     // 課題3-1: 正解判定する
-    // kotae と yoso が一致するかどうか調べて結果を出力
+    // kotae と yosou が一致するかどうか調べて結果を出力
     // 課題3-1における出力先はコンソール
 
     let x = document.querySelector('p#result');
     if (kaisu > 3) {
         x.textContent = ("答えは" + kotae + "でした. すでにゲームは終わっています");
-    } else if (yoso === kotae) {
+    } else if (yosou === kotae) {
         x.textContent = ("正解です. おめでとう！");
         kaisu = kaisu + 3;
-    } else if (yoso < kotae) {
+    } else if (yosou < kotae) {
         x.textContent = ("まちがい. 答えはもっと大きいですよ");
     } else {
         x.textContent = ("まちがい. 答えはもっと小さいですよ");
