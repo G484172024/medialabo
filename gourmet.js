@@ -63,7 +63,56 @@ function printDom(data) {
 
 // 課題6-1 のイベントハンドラ sendRequest() の定義
 function sendRequest() {
+  let oo = document.querySelector('input[name="kensakuki-"]');
+  let menu = (oo.value);
 
+
+  let G;
+  if (menu === '居酒屋') {
+    G = '01';
+  } else if (menu === 'ダイニングバー・バル') {
+    G = '02';
+  } else if (menu === '創作料理') {
+    G = '03';
+  } else if (menu === '和食') {
+    G = '04';
+  } else if (menu === '洋食') {
+    G = '05'
+  } else if (menu === 'イタリアン・フレンチ') {
+    G = '06';
+  } else if (menu === '中華') {
+    G = '07';
+  } else if (menu === '焼肉・ホルモン') {
+    G = '08';
+  } else if (menu === 'アジア・エスニック料理') {
+    G = '09';
+  } else if (menu === '各国料理') {
+    G = '10';
+  } else if (menu === 'カラオケ・パーティ') {
+    G = '11';
+  } else if (menu === 'バー・カクテル') {
+    G = '12';
+  } else if (menu === 'ラーメン') {
+    G = '13';
+  } else if (menu === 'カフェ・スイーツ') {
+    G = '14';
+  } else if (menu === 'その他グルメ') {
+    G = '15';
+  } else if (menu === 'お好み焼き・もんじゃ') {
+    G = '16';
+  } else if (menu === '韓国料理') {
+    G = '17'
+  }
+
+  if (G === '01' || G === '02' || G === '03' || G === '04' || G === '05' || G === '06' || G === '07' || G === '08' || G === '09' || G === '10' || G === '11' || G === '12' || G === '13|| G === '14'|| G === '15'|| G === '16'|| G === '17'){
+  let url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G0' + G + '.json';
+
+  axios.get(url)
+    .then(showResult)
+    .catch(showError)
+    .then(finish);
+}else {
+  console.log('対応したものを入れてください')
 }
 
 // 課題6-1: 通信が成功した時の処理は以下に記述
